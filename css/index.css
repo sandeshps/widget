@@ -1,0 +1,325 @@
+* {
+  font-family: "Lato";
+}
+
+.widget {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.tab-section {
+  width: 100%;
+  text-align: right;
+  z-index: 0;
+  position: relative;
+}
+ .tab-section .tabsCollection {
+   margin-right: 26px;
+ }
+
+.tab {
+  width: 121px;
+  height: 38px;
+  margin-left: -16px;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+}
+
+  .tab.close-tab {
+    position: absolute;
+    top: 0;
+    right: -42px;
+    z-index: -10000;
+  }
+    .tab.close-tab .material-icons {
+      color: white;
+    }
+
+  .tab .material-icons {
+    font-size: 15px;
+    vertical-align: middle;
+    top: 11px;
+    position: relative;
+    color: rgb(128, 128, 128);
+  }
+
+  .tab::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    border-bottom: none;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    background: #D5D5D5;
+    box-shadow: 0px -1px 0px 1px rgba(128, 128, 128, 0.73);
+    transform: perspective(5px) rotateX(2deg);
+    transform-origin: bottom;
+  }
+
+  .tab.close-tab::before {
+    background: #545454;
+    box-shadow: none;
+  }
+
+  .tab.active {
+    z-index: 10000;
+  }
+
+  .tab.active::before {
+    background-color: #EEEEEE;
+  }
+
+  .tab span {
+    position: relative;
+    top: 12px;
+    color: #808080;
+  }
+
+.content-section .faq-section,
+.content-section .email-section,
+.content-section .chat-section {
+  display: flex;
+  background-color: #EEEEEE;
+  box-shadow: 0px 1px 2px 3px rgba(128, 128, 128, 0.46);
+  min-height: 320px;
+}
+  .content-section .chat-section {
+    width: 363px;
+    margin-left: auto;
+    box-shadow: none;
+    border-left: 1px solid #a09c9c;
+    padding: 33px;
+  }
+
+   .chat-section .chat-profile {
+     width: 100%;
+     position: relative;
+   }
+   .chat-section .chat-text {
+      font-size: 15px;
+      margin-left: 20px;
+      background-color: rgba(128, 128, 128, 0.23);
+      padding: 8px;
+      border-radius: 5px;
+      position: relative;
+      top: 3px;
+      animation-delay: 0.5s;
+      display: inline-flex;
+      width: 80%;
+   }
+   .chat-section .chat-input {
+      border-radius: 3px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      right: 0;
+      animation-delay: 0.3s;
+      padding: 10px;
+   }
+  .faq-section .email-holder {
+    width: 39%;
+    text-align: center;
+    padding-top: 88px;
+    padding-left: 30px;
+    padding-right: 20px;
+    border-right: 1px solid #808080;
+  }
+    .email-holder .email-title-text {
+      font-size: 21px;
+      color: rgba(0, 0, 0, 0.64);
+    }
+
+    .email-holder .email-ending-text {
+      font-size: 15px;
+      padding-top: 28px;
+      color: #808080;
+    }
+
+  .faq-section .faq-mail-button {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 8px;
+    margin-top: 20px;
+    width: 111px;
+  }
+
+  .faq-section .mail-outline-icon {
+    font-size: 15px;
+    position: relative;
+    color: #808080;
+  }
+
+  .faq-section .write-to-us {
+    vertical-align: top;
+    top: -3px;
+    position: relative;
+  }
+
+  .faq-section .faq-main-content {
+    padding-left: 35px;
+    padding-top: 20px;
+    padding-right: 20px;
+    /*padding-bottom: 20px;*/
+    width: 70%;
+    height: 100%;
+  }
+
+    .faq-main-content .search-input-holder {
+      position: relative;
+    }
+      .search-input-holder .search-icon {
+        position: absolute;
+        z-index: 1000;
+        left: 9px;
+        top: 8px;
+        font-size: 18px;
+        color: gray;
+        cursor: pointer;
+      }
+      .search-input-holder .search-input {
+        font-size: 15px;
+        width: 91%;
+        height: 34px;
+        border-radius: 24px;
+        padding-left: 32px;
+        color: rgb(0, 0, 0);
+      }
+      @keyframes turbulence {
+        10%, 90% {
+          transform: translate3d(-1px, 0, 0);
+        }
+        20%, 80% {
+          transform: translate3d(2px, 0, 0);
+        }
+        30%, 50%, 70% {
+          transform: translate3d(-4px, 0, 0);
+        }
+        40%, 60% {
+          transform: translate3d(4px, 0, 0);
+        }
+      }
+      .thumbnail-holder {
+        margin-top: 50px;
+      }
+        .thumbnail-holder .thmbnail {
+          cursor: pointer;
+          width: 30%;
+          text-align: center;
+          padding: 16px;
+          display: inline-block;
+        }
+          .thmbnail:hover {
+            box-shadow: 0px 0px 2px 0px gray;
+            border-radius: 5px;
+            background-color: #FAFAFA;
+            animation: shake 0.80s both;
+            transform: translate3d(0, 0, 0);
+          }
+          .thmbnail .material-icons {
+            color: #3482C2;
+          }
+          .thmbnail p {
+            color: #3482C2;
+            margin-top: 0px;
+          }
+
+.content-section .email-section {
+  width: 562px;
+  margin-left: auto;
+}
+ .email-section .holder {
+   padding: 20px;
+   width: 100%;
+ }
+  .holder .toSection,
+  .holder .subjectSection,
+  .holder .messageSection {
+    position: relative;
+    display: flex;
+    margin-top: 20px;
+  }
+   .toSection input {
+     width: 100%;
+     background-color: #D5D5D5;
+     border: none;
+     height: 30px;
+     box-shadow: 0px 0px 0px 1px rgba(162, 150, 150, 0.55);
+     border-radius: 3px;
+     padding-left: 30px;
+   }
+   .toSection label {
+     position: absolute;
+     top: 6px;
+     left: 8px;
+   }
+    .subjectSection input {
+      border-radius: 3px;
+      padding-left: 10px;
+      height: 30px;
+    }
+
+    .messageSection textarea {
+      height: 102px;
+      border-radius: 3px;
+      resize: none;
+      padding: 10px;
+      width: 100%;
+    }
+  .holder .attach-files {
+    cursor: pointer;
+    display: inline-flex;
+    margin-top: 12px;
+  }
+   .attach-files .material-icons,
+   .attach-files span {
+     color: #3482C2;
+   }
+   .attach-files .material-icons {
+     font-size: 20px;
+   }
+   .attach-files span {
+     padding-left: 5px;
+     font-size: 14px;
+     position: relative;
+     top: 1px;
+   }
+
+  .holder .successMessage {
+    background-color: #DEF0D8;
+    padding: 9px;
+  }
+   .successMessage .material-icons {
+     font-size: 20px;
+     color: #4D7049;
+     font-weight: 900;
+   }
+   .successMessage .successMsgText {
+     vertical-align: top;
+   }
+  .holder .send-button {
+    display: inline-flex;
+    float: right;
+    position: relative;
+    top: 17px;
+  }
+   .send-button .btnSend {
+     text-align: center;
+     padding-top: 3px;
+     padding-bottom: 3px;
+     background-image: linear-gradient(bottom, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
+     background-image: -o-linear-gradient(bottom, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
+     background-image: -moz-linear-gradient(bottom, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
+     background-image: -webkit-linear-gradient(bottom, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
+     background-image: -ms-linear-gradient(bottom, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
+   }

@@ -1,0 +1,162 @@
+<!doctype html>
+<html ng-app="assignment">
+  <head>
+    <meta charset="utf-8">
+    <title>Widget</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link href="css/external/animate.css" rel="stylesheet"/>
+
+    <link href="css/index.css" rel="stylesheet"/>
+    <link href="css/common.css" rel="stylesheet"/>
+    <!-- External dependencies -->
+    <script src="js/external/jquery-3.2.1.min.js"></script>
+    <script src='js/external/angular.min.js'></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/widget.js"></script>
+    <script src="js/directives/filePicker.js"></script>
+  </head>
+
+  <body ng-controller="widgetCtrl">
+
+    <div class='widget' ng-cloak>
+      <!-- Tab declaration -->
+      <div class='tab-section'>
+        <div class='tabsCollection'>
+          <div class='tab' ng-class="{'active':widget.chatSelected == true}" ng-click="selectTab('chat');">
+            <i class="material-icons">message</i>
+            <span>Live Chat</span>
+          </div>
+          <div class='tab' ng-class="{'active':widget.faqSelected == true}" ng-click="selectTab('faq')">
+            <i class="material-icons">search</i>
+            <span>FAQ</span>
+          </div>
+          <div class='tab' ng-class="{'active':widget.mailSelected == true}" ng-click="selectTab('mail')">
+            <i class="material-icons">mail_outline</i>
+            <span>Mail Us</span>
+          </div>
+        </div>
+        <div class='tab close-tab' ng-hide="isClosed" ng-click="closeWidget()">
+          <i class="material-icons">close</i>
+        </div>
+        <div class='tab close-tab' ng-show="isClosed" ng-click="openWidget()">
+          <i class="material-icons">keyboard_arrow_up</i>
+        </div>
+      </div>
+      <!-- End of tab declaration -->
+
+      <!-- Content section -->
+      <div class='content-section' ng-show="!isClosed">
+
+        <div class='chat-section' ng-show="widget.chatSelected">
+          <div class='chat-profile'>
+            <img src="images/smiley-face-blue.svg" width="32" class="animated bounceInUp"/>
+            <span class='chat-text animated bounceInUp'>
+              Hi there, how are you doing ? How can i help you?
+            </span>
+            <textarea class="chat-input animated bounceInUp" placeholder="Question here ..."></textarea>
+          </div>
+        </div>
+
+        <div class='faq-section' ng-show="widget.faqSelected">
+          <div class='email-holder animated fadeIn'>
+            <p class='email-title-text'>
+              Prefer email instead?
+            </p>
+            <button type="button" class="faq-mail-button" ng-click="toEmail();">
+              <i class="material-icons mail-outline-icon">mail_outline</i>
+              <span class='write-to-us'>Write to us</span>
+            </button>
+            <p class='email-ending-text'>
+              We are super quick in responding to your queries.
+          </div>
+          <div class='faq-main-content'>
+            <div class='search-input-holder'>
+              <i class="material-icons search-icon">search</i>
+              <input type="text" class="search-input" placeholder="What can we help you with? Start typing your question..."/>
+            </div>
+            <div class='thumbnail-holder animated zoomIn'>
+              <div class='thmbnail'>
+                <i class="material-icons">folder</i>
+                <p>
+                  Sharing Openings
+                </p>
+              </div>
+              <div class='thmbnail'>
+                <i class="material-icons">card_travel</i>
+                <p>
+                  Manage openings
+                </p>
+              </div>
+              <div class='thmbnail'>
+                <i class="material-icons">assignment_ind</i>
+                <p>
+                  Managing Candidates
+                </p>
+              </div>
+              <div class='thmbnail'>
+                <i class="material-icons">account_box</i>
+                <p>
+                  Account Management
+                </p>
+              </div>
+              <div class='thmbnail'>
+                <i class="material-icons">folder_shared</i>
+                <p>
+                  Sourcing Candidates
+                </p>
+              </div>
+              <div class='thmbnail'>
+                <i class="material-icons">report</i>
+                <p>
+                  Reporting
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="email-section" ng-show="widget.mailSelected">
+          <div class='holder'>
+            <form name='sendMail' ng-submit="sendEmail(sendMail)">
+              <div class='successMessage' ng-if="formSubmitSuccess">
+                <i class="material-icons">done</i>
+                <span class='successMsgText animated fadeInUp'>
+                  Message sent! Thanks for reaching out! Someone from our team will get back to you soon.
+                </span>
+              </div>
+              <div class='toSection'>
+                <label>
+                  To
+                </label>
+                <input type="text" ng-model="mailFields.toAddress" ng-disabled="true"/>
+              </div>
+              <div class='subjectSection'>
+                <input type="text" ng-model="mailFields.mailSubject" placeholder="Subject"/>
+              </div>
+              <div class='messageSection'>
+                <textarea ng-model="mailFields.mailMessage" placeholder="Message..."></textarea>
+              </div>
+              <div class="attach-files" file-picker elem="filepicker">
+                <i class="material-icons">attachment</i>
+                <span>Attach files</span>
+              </div>
+              <input type="file" id="filepicker" style="display:none"/>
+              <div class='send-button'>
+                <button type='submit' class='btn btn-primary btnSend'>
+                  Send Mail
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- End of content section -->
+    </div>
+  </body>
+</html>
