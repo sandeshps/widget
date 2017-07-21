@@ -60,7 +60,7 @@
     function init() {
       $scope.widget = {};
       $scope.mailFields = {};
-      $scope.isClosed = false;
+      $scope.isClosed = true;
       $scope.mailFields.toAddress = 'support@recruiterbox.com';
       $scope.widget.chatSelected = true;
       $scope.widget.faqSelected = false;
