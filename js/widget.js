@@ -16,7 +16,12 @@
           $scope.widget[key] = false;
         }
       }
+      // Remove success message
+      if(property != 'mailSelected') {
+        $scope.formSubmitSuccess = false;
+      }
     }
+
 
     // Switch tab
     $scope.selectTab = function(name) {
@@ -39,6 +44,10 @@
 
     $scope.openWidget = function() {
       $scope.isClosed = !$scope.isClosed;
+    }
+
+    $scope.toEmail = function() {
+      $scope.switchTabs('mailSelected');
     }
 
     // Send email

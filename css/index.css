@@ -39,6 +39,8 @@
   }
     .tab.close-tab .material-icons {
       color: white;
+      font-size: 21px;
+      font-weight: 700;
     }
 
   .tab .material-icons {
@@ -113,7 +115,7 @@
       border-radius: 5px;
       position: relative;
       top: 3px;
-      animation-delay: 0.5s;
+      animation-delay: 0.3s;
       display: inline-flex;
       width: 80%;
    }
@@ -124,7 +126,7 @@
       left: 0;
       width: 100%;
       right: 0;
-      animation-delay: 0.3s;
+      animation-delay: 0.5s;
       padding: 10px;
    }
   .faq-section .email-holder {
@@ -234,10 +236,10 @@
             transform: translate3d(0, 0, 0);
           }
           .thmbnail .material-icons {
-            color: #3482C2;
+            color: rgb(52, 130, 194);
           }
           .thmbnail p {
-            color: #3482C2;
+            color: rgba(52, 130, 194, 0.75);
             margin-top: 0px;
           }
 
@@ -258,6 +260,7 @@
   }
    .toSection input {
      width: 100%;
+     color: rgb(128, 128, 128);
      background-color: #D5D5D5;
      border: none;
      height: 30px;
@@ -290,7 +293,7 @@
   }
    .attach-files .material-icons,
    .attach-files span {
-     color: #3482C2;
+     color: rgba(52, 130, 194, 0.85);
    }
    .attach-files .material-icons {
      font-size: 20px;
@@ -308,11 +311,12 @@
   }
    .successMessage .material-icons {
      font-size: 20px;
-     color: #4D7049;
+     color: rgb(77, 112, 73);
      font-weight: 900;
    }
    .successMessage .successMsgText {
      vertical-align: top;
+     color: rgb(77, 112, 73);
    }
   .holder .send-button {
     display: inline-flex;
@@ -321,13 +325,14 @@
     top: 17px;
   }
    .send-button .btnSend {
+     padding-top: 4px;
+     padding-bottom: 4px;
+     width: 98px;
+     padding-bottom: 5px;
      text-align: center;
-     padding-top: 3px;
-     padding-bottom: 3px;
      color: rgba(255, 255, 255, 0.70);
-     background: -o-linear-gradient(bottom, rgb(64, 114, 150) 0%, rgba(97, 155, 203, 0.64) 100%);
-     background: -moz-linear-gradient(bottom, rgb(64, 114, 150) 0%, rgba(97, 155, 203, 0.64) 100%);
-     background: linear-gradient(bottom, rgb(64, 114, 150) 0%, rgba(97, 155, 203, 0.64) 100%;
-     /*background: -webkit-linear-gradient(bottom, rgb(64, 114, 150) 0%, rgba(97, 155, 203, 0.64) 100%);*/
-     /*background: -ms-linear-gradient(bottom, rgb(64, 114, 150) 0%, rgba(97, 155, 203, 0.64) 100%);*/
+     background: -o-linear-gradient(bottom, rgb(64, 114, 150) 0%, rgba(113, 148, 177, 0.96));
+     background: -moz-linear-gradient(bottom, rgb(64, 114, 150) 0%, rgba(113, 148, 177, 0.96));
+     background: linear-gradient(bottom, rgb(64, 114, 150) 0%, rgba(113, 148, 177, 0.96));
+     background: -webkit-linear-gradient(bottom, rgb(64, 114, 150) 0%, rgba(113, 148, 177, 0.96));
    }
